@@ -1,7 +1,7 @@
 
 public class StabilizerBarAssemblerFilter extends AbstractFilter {
-	public StabilizerBarAssemblerFilter(String name) {
-		super(name);
+	public StabilizerBarAssemblerFilter(String name, int time) {
+		super(name, time);
 	}
 	
 	@Override

@@ -1,9 +1,15 @@
 
 public abstract class AbstractFilter implements Filter<ChairInProgress, ChairInProgress> {
 	protected String name;
+	private int time;
 	
-	public AbstractFilter(String name) {
+	public AbstractFilter(String name, int time) {
 		this.name = name;
+		this.time = time;
+	}
+	
+	public int getExecutionTime() {
+		return time;
 	}
 	
 	@Override

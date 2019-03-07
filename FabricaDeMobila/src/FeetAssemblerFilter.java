@@ -1,7 +1,7 @@
 
 public class FeetAssemblerFilter extends AbstractFilter {
-	public FeetAssemblerFilter(String name) {
-		super(name);
+	public FeetAssemblerFilter(String name, int time) {
+		super(name, time);
 	}
 	
 	@Override

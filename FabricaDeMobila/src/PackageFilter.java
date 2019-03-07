@@ -1,7 +1,7 @@
 
 public class PackageFilter extends AbstractFilter {
-	public PackageFilter(String name) {
-		super(name);
+	public PackageFilter(String name, int time) {
+		super(name, time);
 	}
 	
 	@Override

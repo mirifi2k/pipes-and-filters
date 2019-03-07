@@ -1,7 +1,7 @@
 
 public class BackRestAssemblerFilter extends AbstractFilter {
-	public BackRestAssemblerFilter(String name) {
-		super(name);
+	public BackRestAssemblerFilter(String name, int time) {
+		super(name, time);
 	}
 	
 	@Override

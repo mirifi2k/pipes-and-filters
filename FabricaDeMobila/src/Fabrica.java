@@ -5,17 +5,23 @@ public class Fabrica {
 	protected ChairInProgress first = new ChairInProgress("Wood was delivered.\n");
 	
 	public Fabrica() {
-		workers.add(new CutSeatFilter("Ion"));
-		workers.add(new FeetAssemblerFilter("Vasile"));
-		workers.add(new BackRestAssemblerFilter("Petru"));
-		workers.add(new StabilizerBarAssemblerFilter("Gheorghe"));
-		workers.add(new PackageFilter("Costi"));
+		workers.add(new CutSeatFilter("Ion", 10));
+		workers.add(new FeetAssemblerFilter("Vasile", 15));
+		workers.add(new BackRestAssemblerFilter("Petru", 40));
+		workers.add(new StabilizerBarAssemblerFilter("Gheorghe", 20));
+		workers.add(new PackageFilter("Costi", 10));
 	}
 	
-	public void start() {
+	public int start(int n) {
+		int totalTime = 0;
+		
 		for (Filter<ChairInProgress, ChairInProgress> f : workers) {
 			ChairInProgress out = f.operate(first);
 			first = out;
-		}
+			
+			totalTime += f.getExecutionTime();
+		}	
+		
+		return totalTime + 40 * (n - 1);
 	}
 }

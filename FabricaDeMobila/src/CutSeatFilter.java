@@ -1,7 +1,7 @@
 
 public class CutSeatFilter extends AbstractFilter {
-	public CutSeatFilter(String name) {
-		super(name);
+	public CutSeatFilter(String name, int time) {
+		super(name, time);
 	}
 
 	@Override
