@@ -1,5 +1,5 @@
 
-public abstract class AbstractFilter implements Filter<ChairInProgress, ChairInProgress> {
+public abstract class AbstractFilter implements Filter {
 	protected String name;
 	private int time;
 	

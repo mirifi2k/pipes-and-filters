@@ -1,5 +1,5 @@
 
-public interface Filter<I, O> {
-	O operate(I input);
+public interface Filter {
+	ChairInProgress operate(ChairInProgress input);
 	int getExecutionTime();
 }

@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class Fabrica {
-	private List<Filter<ChairInProgress, ChairInProgress>> workers = new ArrayList<Filter<ChairInProgress, ChairInProgress>>();
+	private List<Filter> workers = new ArrayList<Filter>();
 	protected ChairInProgress first = new ChairInProgress("Wood was delivered.\n");
 	
 	public Fabrica() {
@@ -15,7 +15,7 @@ public class Fabrica {
 	public int start(int n) {
 		int totalTime = 0;
 		
-		for (Filter<ChairInProgress, ChairInProgress> f : workers) {
+		for (Filter f : workers) {
 			ChairInProgress out = f.operate(first);
 			first = out;
 			
