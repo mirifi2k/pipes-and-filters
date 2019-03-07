@@ -12,16 +12,24 @@ public class Fabrica {
 		workers.add(new PackageFilter("Costi", 10));
 	}
 	
-	public int start(int n) {
-		int totalTime = 0;
+	public int getFiltersExecutionTime() {
+		int time = 0;
 		
 		for (Filter f : workers) {
-			ChairInProgress out = f.operate(first);
-			first = out;
-			
-			totalTime += f.getExecutionTime();
-		}	
+			time += f.getExecutionTime();
+		}
 		
-		return totalTime + 40 * (n - 1);
+		return time;
+	}
+	
+	public int start(int n) {
+		while (n --> 0) {
+			for (Filter f : workers) {
+				ChairInProgress out = f.operate(first);
+				first = out;
+			}	
+		}
+		
+		return getFiltersExecutionTime() + 40 * (n - 1);
 	}
 }
